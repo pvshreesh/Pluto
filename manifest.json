@@ -14,10 +14,10 @@
   ],
   "action": {
     "default_title": "Pluto",
-    "default_popup": "popup/popup.html"
+    "default_popup": "dist/popup/popup.html"
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "dist/background.js"
   },
-  "options_page": "popup/popup.html"
+  "options_page": "dist/popup/popup.html"
 }

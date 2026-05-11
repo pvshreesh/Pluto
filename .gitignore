@@ -1,8 +1,20 @@
 # Node modules
 node_modules/
 
-# Server env
+# Build output
+dist/
+*.js.map
+
+# Environment files
+.env
+.env.local
+.env.*.local
 server/.env
+
+# Python (legacy)
+server-python/__pycache__/
+*.pyc
+*.pyo
 
 # OS
 .DS_Store
@@ -10,3 +22,4 @@ Thumbs.db
 
 # VS Code
 .vscode/
+
