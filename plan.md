@@ -221,3 +221,53 @@ Validation checks:
 3. Build sessionization service with deterministic heuristics.
 4. Add embedding + pgvector retrieval for natural-language recall.
 5. Ship first end-to-end demo: capture -> session -> recall -> resume.
+
+## 14. Continuity "Why" Architecture Decision (May 11, 2026)
+### Storage split
+- Supabase (Postgres) is the canonical store for user events and sessions.
+- Neo4j stores relationship intelligence (people, companies, roles, intents, and their links).
+- Neo4j does not store full session payloads; it stores references to Supabase records via `session_id` (and optional `event_id`) on edges or lightweight `SessionRef` nodes.
+
+### Trigger strategy
+- Passive checks run every X minutes only in high-signal contexts (for example LinkedIn profile/notification/message pages), not on every interaction.
+- Active checks run immediately when the user taps the FAB or explicitly prompts Pluto.
+- Use debounce, cache, and lookup budgets to keep compute low and avoid noisy behavior.
+
+### Retrieval flow
+1. Detect current context entities (person/company/role/page intent).
+2. Query Neo4j for relevant paths and relationship matches.
+3. Extract referenced `session_id` from matched nodes/edges.
+4. Fetch canonical session and ordered event flow from Supabase.
+5. Return a calm continuity response:
+- why this matters now
+- what happened last time
+- optional resume action
+
+### UX behavior
+- Default behavior is calm and non-intrusive.
+- Auto-show continuity cards only for high-confidence matches.
+- Medium/low confidence should surface only on user invocation (FAB) or as a subtle badge.
+
+## 15. Language Migration Direction (May 11, 2026)
+### Decision
+- Migrate extension UI/runtime code from JavaScript to TypeScript for stronger type safety and fewer production regressions.
+- Migrate backend services from Node.js/JavaScript to Python to better support KG reasoning, ranking logic, and ML-adjacent workflows.
+
+### Target stack
+- Extension: TypeScript (popup first, then background/runtime message contracts).
+- Backend API + processing: Python (preserve current REST contracts during migration).
+- Data layer remains: Supabase/Postgres for canonical sessions/events and Neo4j for relationship intelligence.
+
+### Migration principles
+- No big-bang rewrite; use staged parity migration.
+- Keep existing features stable while migrating (`capture -> sessionize -> recall -> resume` must remain functional).
+- Preserve API contract compatibility where possible to avoid extension breakage.
+- Add contract and parity checks before retiring old implementations.
+
+### Suggested execution order
+1. Define/lock shared request-response contracts for extension <-> backend.
+2. Convert popup code to TypeScript.
+3. Convert background/service worker code to TypeScript.
+4. Introduce Python service with one endpoint slice (for example recall) behind existing contract.
+5. Migrate remaining backend endpoints (events, sessions, graph) to Python after parity validation.
+6. Decommission Node.js backend once Python reaches full feature and behavior parity.
