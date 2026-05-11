@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Pluto",
+  "description": "A calm browser memory and continuity layer.",
+  "version": "0.1.0",
+  "permissions": [
+    "storage",
+    "tabs",
+    "history",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "Pluto",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "popup/popup.html"
+}

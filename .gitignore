@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# Server env
+server/.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/

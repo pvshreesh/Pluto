@@ -1,0 +1,410 @@
+# Pluto
+
+## A Calm Browser Memory and Continuity Layer
+
+### What Pluto Is
+
+Pluto is a browser extension that helps users preserve context across their web activity.
+
+Instead of treating browsing as isolated tabs and pages, Pluto understands browsing as sessions, workflows, and ongoing tasks over time.
+
+The goal is not to automate the user.
+
+The goal is to help users:
+
+* remember why something mattered
+* continue unfinished work
+* reconnect related sessions
+* recover lost context
+* maintain continuity across days and weeks
+
+Pluto should feel:
+
+* calm
+* ambient
+* quiet
+* helpful
+* respectful
+* privacy-first
+
+The emotional idea behind Pluto is:
+
+> “Silent but present.”
+
+---
+
+# The Core Problem
+
+Modern browsers remember:
+
+* tabs
+* history
+* bookmarks
+* downloads
+
+But they do not remember:
+
+* what the user was trying to do
+* why something mattered
+* what decision was made
+* what was left unfinished
+* how different sessions relate
+
+Humans constantly lose context while:
+
+* job searching
+* researching
+* coding
+* debugging
+* learning
+* shopping
+* networking
+* comparing tools/products
+
+Pluto solves this by preserving continuity of context across time.
+
+---
+
+# Core Product Philosophy
+
+Pluto is NOT:
+
+* an AI browser clone
+* a chatbot sidebar
+* an autonomous browsing agent
+* a surveillance tool
+* a productivity nagger
+
+Pluto IS:
+
+* a browser memory system
+* a session continuity layer
+* a contextual recall engine
+* a cognitive support system for browsing
+
+The key philosophy:
+
+> AI should strengthen continuity of thought, not replace human agency.
+
+Pluto should make users more context-aware, not more automated.
+
+---
+
+# Core Product Idea
+
+Pluto observes browsing sessions as complete workflows instead of isolated tabs.
+
+Example:
+
+A user:
+
+1. Applies for a job
+2. Opens the company LinkedIn page
+3. Views employees
+4. Opens a recruiter profile
+5. Sends a connection request
+
+Weeks later, Pluto can reconstruct context:
+
+> “You connected with this recruiter while researching backend infrastructure roles at X Company.”
+
+This is the main product behavior:
+
+* reconstructing context
+* resurfacing intent
+* preserving continuity
+
+---
+
+# Main Product Capabilities
+
+## 1. Session Understanding
+
+Pluto groups browsing activity into sessions.
+
+Examples:
+
+* “Friday job search”
+* “Realtime infrastructure research”
+* “Docker networking debugging”
+* “GPU comparison session”
+
+Sessions include:
+
+* pages visited
+* entities involved
+* actions taken
+* decisions made
+* unresolved questions
+* related sessions
+
+---
+
+## 2. Semantic Recall
+
+Users can search browsing memory naturally.
+
+Examples:
+
+* “Find the Redis article I used last week”
+* “How did I fix this deployment issue before?”
+* “Which recruiter did I contact after applying to X Company?”
+
+Pluto retrieves based on meaning, not just keywords.
+
+---
+
+## 3. Continuity and Resumption
+
+Pluto helps users continue previous work.
+
+Examples:
+
+* “Continue Friday’s job search session”
+* “Resume deployment debugging”
+* “You usually follow applications with recruiter outreach”
+
+The browser should understand:
+
+* what the user was doing
+* what was unresolved
+* what usually happens next
+
+---
+
+## 4. Open-Loop Detection
+
+Pluto detects unfinished workflows.
+
+Examples:
+
+* unfinished job outreach
+* abandoned debugging session
+* unresolved product comparison
+* incomplete research
+
+Example message:
+
+> “You researched X Company on Friday but never contacted anyone there.”
+
+---
+
+## 5. Routine Awareness
+
+Pluto learns behavioral patterns over time.
+
+Examples:
+
+* morning LeetCode routine
+* Friday job search routine
+* weekend coding sessions
+
+Example behavior:
+
+> “You usually solve the LeetCode daily every morning.”
+
+The goal is not aggressive productivity tracking.
+
+The goal is contextual continuity.
+
+---
+
+# Technical Architecture
+
+Pluto should use three major layers.
+
+## 1. Event Layer
+
+Stores low-level browser events.
+
+Examples:
+
+* page viewed
+* tab switched
+* search performed
+* profile opened
+* connection request sent
+
+This is the raw timeline of browsing activity.
+
+---
+
+## 2. Session Layer
+
+Groups events into meaningful workflows.
+
+Example session:
+
+* “Infra startup job search”
+* “Database comparison”
+* “Deployment debugging”
+
+Sessions become the primary cognitive unit.
+
+---
+
+## 3. Knowledge Graph Layer
+
+Stores entities and relationships.
+
+Examples:
+
+* people
+* companies
+* jobs
+* products
+* technologies
+* sessions
+* decisions
+
+Relationships:
+
+* applied_to
+* works_at
+* connected_with
+* related_to
+* researched
+* unresolved
+
+The graph helps reconstruct meaning across time.
+
+---
+
+# Suggested Tech Stack
+
+## Browser Extension
+
+* Plasmo
+* TypeScript
+
+## Event + Session Storage
+
+* Postgres
+
+## Vector Search
+
+* pgvector
+
+## Knowledge Graph
+
+* Neo4j
+
+## Embeddings
+
+* local embedding models initially
+
+---
+
+# Privacy Philosophy
+
+Privacy is foundational.
+
+Pluto should:
+
+* store data locally by default
+* avoid collecting unnecessary raw data
+* exclude sensitive websites by default
+* let users inspect/delete/export memories
+* clearly explain what is stored
+
+Sensitive sites should be excluded:
+
+* banking
+* health
+* government
+* authentication
+* private communication
+
+The product should feel:
+
+> “My browser remembers for me.”
+
+Not:
+
+> “My browser is spying on me.”
+
+---
+
+# Product Positioning
+
+Pluto is NOT:
+
+* another AI browser
+* another browser copilot
+* another chatbot extension
+
+Pluto is:
+
+> A browser that remembers what mattered.
+
+Or:
+
+> The browser that understands your work across time.
+
+The key differentiation:
+
+* existing AI browsers understand pages
+* Pluto understands sessions and continuity
+
+---
+
+# The Main Product Insight
+
+Humans think in:
+
+* goals
+* workflows
+* projects
+* sessions
+* unfinished tasks
+
+Browsers currently understand:
+
+* tabs
+* windows
+* URLs
+
+Pluto bridges that gap.
+
+---
+
+# The Most Important Product Principle
+
+Pluto should always feel:
+
+* calm
+* ambient
+* helpful
+* contextual
+* respectful
+
+NOT:
+
+* noisy
+* manipulative
+* productivity-obsessed
+* over-automated
+
+The best product feeling is:
+
+> “I forgot, but Pluto remembered.”
+
+---
+
+# Initial MVP
+
+The first version should focus ONLY on:
+
+1. Session understanding
+2. Semantic recall
+3. Continuity/resumption
+
+No agents.
+No autonomous automation.
+No massive workflow system.
+
+The first magical experience should be:
+
+> “Oh right, THAT’S why I opened this.”
+
+That is the core of the product.

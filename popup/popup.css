@@ -1,0 +1,148 @@
+:root {
+  --bg: #f2efe7;
+  --card: #fffdf8;
+  --ink: #102a2b;
+  --muted: #4c6667;
+  --line: #d8d2c4;
+  --accent: #2a7f62;
+  --accent-soft: #dff3ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 420px;
+  min-height: 560px;
+  font-family: "Segoe UI", "Noto Sans", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 20% 0%, #fdf8ea 0%, var(--bg) 55%);
+}
+
+.app {
+  padding: 14px;
+}
+
+.hero {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fffef9, #f8f3e8);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.hero p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+section {
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+.search-panel label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+input {
+  flex: 1;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: #fff;
+  color: var(--ink);
+}
+
+button {
+  border: 1px solid #256f57;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #f3fff9;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: var(--accent-soft);
+  color: #194736;
+  border: 1px solid #b5dbc9;
+}
+
+button.danger {
+  background: #d85f5f;
+  color: #fffdfb;
+  border: 1px solid #b84444;
+}
+
+.control-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.control-row button {
+  flex: 1;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.item {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px;
+  background: #fffefa;
+}
+
+.item .title {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.item .meta {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.item .actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 6px;
+}
+
+.stats {
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--muted);
+}

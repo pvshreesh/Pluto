@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pluto</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <h1>Pluto</h1>
+        <p>Silent but present.</p>
+      </header>
+
+      <section class="search-panel">
+        <label for="query">Find past context</label>
+        <div class="row">
+          <input id="query" type="text" placeholder="How did I solve Redis issue last week?" />
+          <button id="searchBtn">Recall</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Recall Results</h2>
+        <ul id="results" class="list"></ul>
+      </section>
+
+      <section>
+        <h2>Open Loops</h2>
+        <ul id="openLoops" class="list"></ul>
+      </section>
+
+      <section>
+        <h2>Recent Sessions</h2>
+        <ul id="recent" class="list"></ul>
+      </section>
+
+      <section>
+        <h2>Data Control</h2>
+        <div class="control-row">
+          <button id="exportBtn" class="secondary">Export data</button>
+          <button id="deleteBtn" class="danger">Delete all</button>
+        </div>
+        <div id="controlStatus" class="stats">Local data only.</div>
+      </section>
+
+      <footer id="stats" class="stats"></footer>
+    </main>
+
+    <script src="dev-mock.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
