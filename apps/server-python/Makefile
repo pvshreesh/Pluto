@@ -37,7 +37,7 @@ migrate: install
 	$(PYTHON) migrations.py
 
 test: install-dev
-	$(VENV_BIN)/pytest -q
+	$(VENV_BIN)/pytest -q tests
 
 test-postgres: install
 	$(PYTHON) postgres_test.py

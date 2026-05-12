@@ -1,13 +1,24 @@
 {
-  "name": "pluto-frontend",
+  "name": "pluto-monorepo",
+  "private": true,
   "version": "0.1.0",
-  "description": "Pluto Chrome extension frontend",
+  "description": "Pluto monorepo (extensions + backends)",
+  "packageManager": "pnpm@10.11.0",
   "scripts": {
-    "build": "tsc && node scripts/copy-assets.js",
-    "watch": "tsc --watch",
-    "clean": "rm -rf dist"
+    "build": "turbo run build",
+    "build:extension": "turbo run build --filter=@pluto/extension-ts",
+    "dev": "turbo run dev --parallel",
+    "dev:extension": "turbo run dev --filter=@pluto/extension-ts",
+    "dev:node": "turbo run dev --filter=@pluto/server-node",
+    "dev:python": "turbo run dev --filter=@pluto/server-python",
+    "test": "turbo run test",
+    "test:python": "turbo run test --filter=@pluto/server-python",
+    "migrate": "turbo run migrate",
+    "migrate:node": "turbo run migrate --filter=@pluto/server-node",
+    "migrate:python": "turbo run migrate --filter=@pluto/server-python",
+    "clean": "turbo run clean && rm -rf .turbo"
   },
   "devDependencies": {
-    "typescript": "^5.3.3"
+    "turbo": "^2.5.4"
   }
 }

@@ -3,16 +3,21 @@ node_modules/
 
 # Build output
 dist/
+apps/extension-ts/dist/
+.turbo/
 *.js.map
 
 # Environment files
 .env
 .env.local
 .env.*.local
-server/.env
+apps/server-node/.env
+apps/server-python/.env
 
 # Python (legacy)
-server-python/__pycache__/
+**/__pycache__/
+.pytest_cache/
+*.egg-info/
 *.pyc
 *.pyo
 
@@ -22,4 +27,3 @@ Thumbs.db
 
 # VS Code
 .vscode/
-

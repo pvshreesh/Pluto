@@ -11,10 +11,18 @@ Browser Extension → API Server → Postgres (pgvector) + Neo4j
 - All data stored in your infrastructure (privacy-first)
 
 ## Prerequisites
-- Node.js 16+ and npm
+- Node.js 18+ and pnpm
 - Docker (recommended for databases) or manual Postgres 14+ and Neo4j 5+ installation
 
 ## Quick Start (Docker)
+
+From the repo root you can orchestrate apps with Turbo:
+
+```bash
+pnpm install
+pnpm build
+pnpm dev
+```
 
 ### 1. Start databases using Docker
 ```bash
@@ -27,11 +35,11 @@ docker run --name pluto-neo4j -p 7687:7687 -e NEO4J_AUTH=neo4j/password neo4j:la
 
 ### 2. Setup backend server
 ```bash
-cd server
+cd apps/server-node
 cp .env.example .env
-npm install
-npm run migrate
-npm start
+pnpm install
+pnpm run migrate
+pnpm start
 ```
 Server will be running on http://localhost:3000
 
@@ -39,7 +47,7 @@ Server will be running on http://localhost:3000
 1. Open Chrome/Edge extensions page: `chrome://extensions`
 2. Enable "Developer mode"
 3. Click "Load unpacked"
-4. Select the pluto project folder
+4. Select `apps/extension-ts`
 5. Pin the extension
 
 ### 4. Start browsing

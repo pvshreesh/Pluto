@@ -1,12 +1,16 @@
 {
-  "name": "pluto-server",
+  "name": "@pluto/server-node",
+  "private": true,
   "version": "0.1.0",
   "description": "Pluto backend: event storage, embeddings, graph, and recall",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "migrate": "node migrations.js"
+    "migrate": "node migrations.js",
+    "test:neo4j": "node neo4j-test.js",
+    "test:mongo": "node mongo-test.js",
+    "clean": "echo \"No clean step configured for server-node\""
   },
   "dependencies": {
     "express": "^4.18.2",

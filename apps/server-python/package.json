@@ -1,0 +1,12 @@
+{
+  "name": "@pluto/server-python",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Python backend wrapper for Turbo tasks",
+  "scripts": {
+    "dev": "make dev",
+    "test": "make test",
+    "migrate": "make migrate",
+    "clean": "make clean"
+  }
+}
